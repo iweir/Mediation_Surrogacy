@@ -11,3 +11,15 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 3. Stata code used for data generation for simulation study 
 4. R code used for analysis in simulation study 
 
+#### 1. R function to compute mediation measures according to our method
+* xxxxxxxxx.R
+
+#### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
+* xxxxxxxxxxx.R
+* xxxxxxxxxxx.R
+#### 3. Stata code used for data generation for simulation study 
+* xxxxxxxxxx.do 
+
+#### 4. R code used for analysis in simulation study 
+* xxxxxxxxxxx.R
+* xxxxxxxxxxx.R
