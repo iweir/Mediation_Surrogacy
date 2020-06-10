@@ -13,15 +13,17 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 
 #### 1. R function to compute mediation measures according to our method
 * prepareData.R
-* getMedMeas_risk.R
 * getMedMeas_rmtl.R
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
 * xxxxxxxxxxx.R
 * xxxxxxxxxxx.R
+
 #### 3. Stata code used for data generation for simulation study 
-* xxxxxxxxxx.do 
+* XX GenerateData.do - a stata program to generate individual level time-to-event data through illness death model
 
 #### 4. R code used for analysis in simulation study 
-* xxxxxxxxxxx.R
-* xxxxxxxxxxx.R
+* XX scenario_table.txt 
+* XX simulation_analysis.R
+* XX getMedMeas_risk.R - get mediation measures according to difference in risk at a single time point
+* XX getMedMeas_Cox.R - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
