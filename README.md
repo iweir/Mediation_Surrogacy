@@ -12,7 +12,9 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 4. R code used for analysis in simulation study 
 
 #### 1. R function to compute mediation measures according to our method
-* xxxxxxxxx.R
+* prepareData.R
+* getMedMeas_risk.R
+* getMedMeas_rmtl.R
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
 * xxxxxxxxxxx.R
