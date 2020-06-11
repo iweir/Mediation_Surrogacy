@@ -19,28 +19,28 @@ getMedMeas_cox <- function(widedat, tau, cox.model){
 					z4	  = widedat$z4)
 
 	#----- 1-P(T(1,0) > t) -----#
-	pp_10    	<- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_1, times=tau)
-	RMLE_10 	<- mean(cbind(pp_10, widedat$Arm)[widedat$Arm==0,1])
+	pp_10       <- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_1, times=tau)
+	RMLE_10     <- mean(cbind(pp_10, widedat$Arm)[widedat$Arm==0,1])
 
 	#----- 1-P(T(0,0) > t) -----#
-	pp_00    <- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_0, times=tau)
-	RMLE_00  <- mean(cbind(pp_00, widedat$Arm)[widedat$Arm==0,1])
+	pp_00       <- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_0, times=tau)
+	RMLE_00     <- mean(cbind(pp_00, widedat$Arm)[widedat$Arm==0,1])
 
 	#----- 1-P(T(1,1) > t) -----# 
-	pp_11    <- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_1, times=tau)
-	RMLE_11  <- mean(cbind(pp_11, widedat$Arm)[widedat$Arm==1,1])
+	pp_11       <- 1-predictProb(cox.model, Surv(widedat$timeD, widedat$DeathInd), x=new_1, times=tau)
+	RMLE_11     <- mean(cbind(pp_11, widedat$Arm)[widedat$Arm==1,1])
 
 	# direct effect:
-	direct   <- RMLE_10-RMLE_00
+	direct      <- RMLE_10-RMLE_00
 
 	# indirect effect:
-	indirect <- RMLE_11-RMLE_10
+	indirect    <- RMLE_11-RMLE_10
 
 	# total effect:
-	total    <- RMLE_11-RMLE_00
+	total       <- RMLE_11-RMLE_00
 
 	# mediation proportion:
-	PM     	 <- indirect/total
+	PM     	    <- indirect/total
 
 	all_results <-	list(direct   = direct,
                              indirect = indirect,
