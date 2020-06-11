@@ -19,11 +19,11 @@ For reproducbility and implementation, I share the code for all analyses present
 * [SPCGanalysis_msm.R](SPCGanalysis_msm.R)
 
 #### 3. Simulated data and R code implementing method
-* [simulated_data.txt] (simulated_data.txt)
-* [analysis_demo.R] (analysis_demo.R)
+* [simulated_data.txt](simulated_data.txt)
+* [analysis_demo.R](analysis_demo.R)
 
 #### 3. Code to replicate simulation study 
-* [GenerateData.do] (GenerateData.do) - a stata program to generate individual level time-to-event data through illness death model
-* [scenario_table.txt] (scenarioTable.txt) - table of scenario parameters
+* [GenerateData.do](GenerateData.do) - a stata program to generate individual level time-to-event data through illness death model
+* [scenario_table.txt](scenarioTable.txt) - table of scenario parameters
 * [simulation_analysis.R](simulation_analysis.R) - 
 
