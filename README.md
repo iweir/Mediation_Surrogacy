@@ -9,21 +9,21 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 For reproducbility and implementation, I share the code for all analyses presented in our working paper. The data from the SPCG-4 randomized trial are not publically available. The simulated dataset and demo may help you to understand the methods. 
 
 #### 1. R functions to compute mediation measures according to our methods
-* [FUN_getMedMeas_risk.R](FUN_getMedMeas_risk.R)
-* [FUN_getMedMeas_rmtl.R](FUN_getMedMeas_rmtl.R)
-* [FUN_AUCiw.R](FUN_AUCiw.R)
-* [FUN_getMedMeas_Cox.R](FUN_getMedMeas_Cox.R) - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
+* [FUN_getMedMeas_risk.R](FUN_getMedMeas_risk.R) - to get mediation measures for multistate models according to difference in cumulative risks
+* [FUN_getMedMeas_rmtl.R](FUN_getMedMeas_rmtl.R) - to get mediation measures for multistate models according to difference in rmtl
+* [FUN_AUCiw.R](FUN_AUCiw.R) - to compute the area under the curve (rmtl)
+* [FUN_getMedMeas_Cox.R](FUN_getMedMeas_Cox.R) - to get mediation measures from Cox model (used in simulation study)
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
-* [SPCGanalysis_illnessdeath.R](SPCGanalysis_illnessdeath.R)
-* [SPCGanalysis_msm.R](SPCGanalysis_msm.R)
+* [SPCGanalysis_illnessdeath.R](SPCGanalysis_illnessdeath.R) - code to reproduce analysis of SPCG-4 data with illness death model
+* [SPCGanalysis_msm.R](SPCGanalysis_msm.R) - code to reproduce analysis of SPCG-4 data with multistate model
 
 #### 3. Simulated data and R code implementing method
-* [demodata.txt](demodata.txt)
-* [analysis_demo.R](analysis_demo.R)
+* [demodata.txt](demodata.txt) - a simulated dataset for use demonstrating methods 
+* [analysis_demo.R](analysis_demo.R) - demonstration of methods using demodata.txt
 
 #### 4. Code to replicate simulation study 
 * [GenerateData.do](GenerateData.do) - a stata program to generate individual level time-to-event data through illness death model
 * [scenario_table.txt](scenarioTable.txt) - table of scenario parameters
-* [simulation_analysis.R](simulation_analysis.R) - 
+* [simulation_analysis.R](simulation_analysis.R) - code to reproduce simulation study
 
