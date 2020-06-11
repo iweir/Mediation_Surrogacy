@@ -25,5 +25,5 @@ For reproducbility and implementation, I share the code for all analyses present
 #### 3. Code to replicate simulation study 
 * GenerateData.do - a stata program to generate individual level time-to-event data through illness death model
 * scenario_table.txt 
-* [simulation_analysis.R]( XX getMedMeas_Cox.R - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate))
+* [simulation_analysis.R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html)
 
