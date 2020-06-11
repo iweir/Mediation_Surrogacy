@@ -24,6 +24,6 @@ For reproducbility and implementation, I share the code for all analyses present
 
 #### 3. Code to replicate simulation study 
 * GenerateData.do - a stata program to generate individual level time-to-event data through illness death model
-* scenario_table.txt 
-* [simulation_analysis.R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html) - description text
+* [scenario_table.txt] (https://github.com/iweir/Mediation_Surrogacy/blob/master/scenarioTable.txt) - table of scenario parameters
+* [simulation_analysis.R]() - description text
 
