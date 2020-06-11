@@ -9,9 +9,9 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 For reproducbility and transparency, I share the code for all analyses presented in my working paper. The data from the SPCG-4 randomized trial are not publically available however data generated from the simulation study may help you to understand the methods. 
 
 #### 1. R function to compute mediation measures according to our methods
-* XX FUN_getMedMeas_risk.R
-* FUN_getMedMeas_rmtl.R
-* XX FUN_rmtl.R
+* XX FUN_getMedMeas_risk.R - with option to recieve CI
+* XX FUN_getMedMeas_rmtl.R
+* XX FUN_auc.R
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
 * SPCGanalysis_illnessdeath.R
