@@ -12,7 +12,7 @@ For reproducbility and implementation, I share the code for all analyses present
 * [FUN_getMedMeas_risk.R](FUN_getMedMeas_risk.R)
 * [FUN_getMedMeas_rmtl.R](FUN_getMedMeas_rmtl.R)
 * [FUN_AUCiw.R](FUN_AUCiw.R)
-* [getMedMeas_Cox.R](getMedMeas_Cox.R) - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
+* [FUN_getMedMeas_Cox.R](getMedMeas_Cox.R) - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
 * [SPCGanalysis_illnessdeath.R](SPCGanalysis_illnessdeath.R)
@@ -22,7 +22,7 @@ For reproducbility and implementation, I share the code for all analyses present
 * [simulated_data.txt](simulated_data.txt)
 * [analysis_demo.R](analysis_demo.R)
 
-#### 3. Code to replicate simulation study 
+#### 4. Code to replicate simulation study 
 * [GenerateData.do](GenerateData.do) - a stata program to generate individual level time-to-event data through illness death model
 * [scenario_table.txt](scenarioTable.txt) - table of scenario parameters
 * [simulation_analysis.R](simulation_analysis.R) - 
