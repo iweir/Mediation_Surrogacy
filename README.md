@@ -15,7 +15,7 @@ For reproducbility and implementation, I share the code for all analyses present
 * [getMedMeas_Cox.R](getMedMeas_Cox.R) - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
-* [SPCGanalysis_illnessdeath.R}(SPCGanalysis_illnessdeath.R)
+* [SPCGanalysis_illnessdeath.R](SPCGanalysis_illnessdeath.R)
 * [SPCGanalysis_msm.R](SPCGanalysis_msm.R)
 
 #### 3. Simulated data and R code implementing method
