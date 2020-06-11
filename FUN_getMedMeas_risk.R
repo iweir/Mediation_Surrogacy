@@ -3,7 +3,7 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
   risk_byID_0	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
   risk_byID_1	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
 
-  i 		    <- 0
+  i           <- 0
   
   for(id in unique(longdata$id)){ 
     
@@ -18,7 +18,7 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
     tempdat$Arm.2 	<- tempdat$arm0.2
     tempdat$Arm.3	  <- tempdat$arm0.3
     if(any(names(tempdat) =="Arm.4")){ 
-      tempdat$Arm.4   <- tempdat$arm0.4
+      tempdat$Arm.4 <- tempdat$arm0.4
     }
     
     # Predicted cumulative hazards using msfit
@@ -49,8 +49,8 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
     
     
     # risk at time points for counterfactual arm = 1
-    risk_arm1 		  <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
-    temp_risk_arm1 	<- do.call(cbind,risk_arm1)
+    risk_arm1 		    <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
+    temp_risk_arm1 	  <- do.call(cbind,risk_arm1)
     
     risk_byID_0[i,1] 	<- tempdat$id[1]
     risk_byID_0[i,2] 	<- tempdat$Arm[1]
@@ -76,12 +76,12 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
   
   index <- 0
   for(t in tau){
-    index <- index+1
-    all_results$time[index] <- t
+    index                       <- index+1
+    all_results$time[index]     <- t
     
-    ST1M1 	<- res1[2,index+1]
-    ST0M0 	<- res0[1,index+1]
-    ST1M0 	<- res1[1,index+1]
+    ST1M1 	                    <- res1[2,index+1]
+    ST0M0 	                    <- res0[1,index+1]
+    ST1M0 	                    <- res1[1,index+1]
     
     all_results$indirect[index] <- ST1M1-ST1M0
     all_results$direct[index]   <- ST1M0-ST0M0
