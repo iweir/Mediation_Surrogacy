@@ -3,7 +3,7 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
   rmtl_byID_0	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
   rmtl_byID_1	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
   
-  i 		    <- 0
+  i 		      <- 0
   
   for(id in unique(longdata$id)){ 
     
