@@ -1,9 +1,9 @@
 getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
 
-  rmtl_byID_0	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
-  rmtl_byID_1	<- matrix(NA, max(longdata$id), 2+(length(tau)) )
+  rmtl_byID_0 <- matrix(NA, max(longdata$id), 2+(length(tau)) )
+  rmtl_byID_1 <- matrix(NA, max(longdata$id), 2+(length(tau)) )
   
-  i           <- 0
+    i         <- 0
   
   for(id in unique(longdata$id)){ 
     
@@ -76,7 +76,7 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
   
   index <- 0
   for(t in tau){
-    index <- index+1
+    index                   <- index+1
     all_results$time[index] <- t
     
     ST1M1 	<- res1[2,index+1]
@@ -155,15 +155,15 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
       pm_low	    	<- quantile(b_pm, c(0.025, 0.975))[[1]]
       pm_up			    <- quantile(b_pm, c(0.025, 0.975))[[2]]
       
-      CIresults$time[index]          <- t
-      CIresults$direct_low[index]    <- direct_low
-      CIresults$direct_up[index]     <- direct_up
-      CIresults$indirect_low[index]  <- indirect_low
-      CIresults$indirect_up[index]   <- indirect_up
-      CIresults$total_low[index]     <- total_low
-      CIresults$total_up[index]      <- total_up
-      CIresults$pm_low[index]        <- pm_low
-      CIresults$pm_up[index]         <- pm_up
+      CIresults$time[index]         <- t
+      CIresults$direct_low[index]   <- direct_low
+      CIresults$direct_up[index]    <- direct_up
+      CIresults$indirect_low[index] <- indirect_low
+      CIresults$indirect_up[index]  <- indirect_up
+      CIresults$total_low[index]    <- total_low
+      CIresults$total_up[index]     <- total_up
+      CIresults$pm_low[index]       <- pm_low
+      CIresults$pm_up[index]        <- pm_up
       
     }
    
