@@ -56,7 +56,7 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
     rmtl_byID_0[i,2]                   <- tempdat$Arm[1]
     rmtl_byID_0[i,3:ncol(rmtl_byID_0)] <- temp_rmtl_arm0
     
-    rmtl_byID_1[i,1] 	                 <- tempdat$id[1]
+    rmtl_byID_1[i,1]                   <- tempdat$id[1]
     rmtl_byID_1[i,2]                   <- tempdat$Arm[1]
     rmtl_byID_1[i,3:ncol(rmtl_byID_1)] <- temp_rmtl_arm1
     
@@ -76,12 +76,12 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
   
   index <- 0
   for(t in tau){
-    index                   <- index+1
-    all_results$time[index] <- t
+    index                       <- index+1
+    all_results$time[index]     <- t
     
-    ST1M1 	<- res1[2,index+1]
-    ST0M0 	<- res0[1,index+1]
-    ST1M0 	<- res1[1,index+1]
+    ST1M1 	                    <- res1[2,index+1]
+    ST0M0 	                    <- res0[1,index+1]
+    ST1M0 	                    <- res1[1,index+1]
     
     all_results$indirect[index] <- ST1M1-ST1M0
     all_results$direct[index]   <- ST1M0-ST0M0
@@ -106,54 +106,54 @@ getMedMeas_rmtl <- function(longdata, tau, model, transition.mat, CI=FALSE){
     
     for(t in tau){
       index       <- index+1	  
-      B 		      <- 1000
-      b_direct 	  <- as.numeric()
-      b_indirect 	<- as.numeric()
-      b_total 	  <- as.numeric()
-      b_pm 	    	<- as.numeric()
+      B           <- 1000
+      b_direct    <- as.numeric()
+      b_indirect  <- as.numeric()
+      b_total     <- as.numeric()
+      b_pm        <- as.numeric()
       
       for(b in 1:B){
         
-        n_C		<- nrow(rmtl_byID_0[which(rmtl_byID_0[,2]==0),])
-        n_E		<- nrow(rmtl_byID_0[which(rmtl_byID_0[,2]==1),])
+        n_C		    <- nrow(rmtl_byID_0[which(rmtl_byID_0[,2]==0),])
+        n_E		    <- nrow(rmtl_byID_0[which(rmtl_byID_0[,2]==1),])
         
-        Uc 		<- runif(n_C,0,1)
-        Ue 		<- runif(n_E,0,1)
-        Vc 		<- -log(Uc)
-        Ve 		<- -log(Ue)
+        Uc 	 	    <- runif(n_C,0,1)
+        Ue 		    <- runif(n_E,0,1)
+        Vc 		    <- -log(Uc)
+        Ve 		    <- -log(Ue)
         
-        ViPi_S1M1 	<- Ve*rmtl_byID_1[which(rmtl_byID_1[,2]==1), index+2]
-        ViPi_S0M0 	<- Vc*rmtl_byID_0[which(rmtl_byID_0[,2]==0), index+2]
-        ViPi_S1M0 	<- Vc*rmtl_byID_1[which(rmtl_byID_1[,2]==0), index+2]
+        ViPi_S1M1 <- Ve*rmtl_byID_1[which(rmtl_byID_1[,2]==1), index+2]
+        ViPi_S0M0 <- Vc*rmtl_byID_0[which(rmtl_byID_0[,2]==0), index+2]
+        ViPi_S1M0 <- Vc*rmtl_byID_1[which(rmtl_byID_1[,2]==0), index+2]
         
-        S1M1 		<- (1/n_E)*sum(ViPi_S1M1)
-        S0M0 		<- (1/n_C)*sum(ViPi_S0M0)
-        S1M0 		<- (1/n_C)*sum(ViPi_S1M0)
+        S1M1 		  <- (1/n_E)*sum(ViPi_S1M1)
+        S0M0 		  <- (1/n_C)*sum(ViPi_S0M0)
+        S1M0 		  <- (1/n_C)*sum(ViPi_S1M0)
         
         # calculate mediation measures
-        d		<- S1M0-S0M0
-        i		<- S1M1-S1M0
-        tot	<- d+i
-        p		<- i/tot
+        d		      <- S1M0-S0M0
+        i		      <- S1M1-S1M0
+        tot	      <- d+i
+        p		      <- i/tot
         
-        b_direct	  <- c(b_direct, d)
-        b_indirect	<- c(b_indirect, i)
-        b_total   	<- c(b_total, tot)
-        b_pm		    <- c(b_pm, p)
+        b_direct	<- c(b_direct, d)
+        b_indirect<- c(b_indirect, i)
+        b_total   <- c(b_total, tot)
+        b_pm		  <- c(b_pm, p)
         
       }
       
-      direct_low		<- quantile(b_direct, c(0.025, 0.975))[[1]]
-      direct_up		  <- quantile(b_direct, c(0.025, 0.975))[[2]]
+      direct_low	<- quantile(b_direct, c(0.025, 0.975))[[1]]
+      direct_up		<- quantile(b_direct, c(0.025, 0.975))[[2]]
       
-      indirect_low	<- quantile(b_indirect, c(0.025, 0.975))[[1]]
-      indirect_up		<- quantile(b_indirect, c(0.025, 0.975))[[2]]
+      indirect_low<- quantile(b_indirect, c(0.025, 0.975))[[1]]
+      indirect_up	<- quantile(b_indirect, c(0.025, 0.975))[[2]]
       
-      total_low	  	<- quantile(b_total, c(0.025, 0.975))[[1]]
-      total_up		  <- quantile(b_total, c(0.025, 0.975))[[2]]
+      total_low	  <- quantile(b_total, c(0.025, 0.975))[[1]]
+      total_up		<- quantile(b_total, c(0.025, 0.975))[[2]]
       
-      pm_low	    	<- quantile(b_pm, c(0.025, 0.975))[[1]]
-      pm_up			    <- quantile(b_pm, c(0.025, 0.975))[[2]]
+      pm_low	    <- quantile(b_pm, c(0.025, 0.975))[[1]]
+      pm_up			  <- quantile(b_pm, c(0.025, 0.975))[[2]]
       
       CIresults$time[index]         <- t
       CIresults$direct_low[index]   <- direct_low
