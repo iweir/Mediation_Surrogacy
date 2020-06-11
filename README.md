@@ -9,21 +9,21 @@ Here I share the code supporting our work on methods for counterfactual mediatio
 For reproducbility and implementation, I share the code for all analyses presented in our working paper. The data from the SPCG-4 randomized trial are not publically available. The simulated dataset and demo may help you to understand the methods. 
 
 #### 1. R functions to compute mediation measures according to our methods
-* XX FUN_getMedMeas_risk.R
-* XX FUN_getMedMeas_rmtl.R
-* XX FUN_AUCiw.R
-* XX getMedMeas_Cox.R - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
+* FUN_getMedMeas_risk.R
+* FUN_getMedMeas_rmtl.R
+* FUN_AUCiw.R
+* getMedMeas_Cox.R - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate)
 
 #### 2. R code used for application of method in SPCG-4 Randomized Controlled Trial 
-* XX SPCGanalysis_illnessdeath.R
-* XX SPCGanalysis_msm.R
+* SPCGanalysis_illnessdeath.R
+* SPCGanalysis_msm.R
 
 #### 3. Simulated data and R code implementing method
-* XX simulated_data.txt
-* XX analysis_demo.R
+* simulated_data.txt
+* analysis_demo.R
 
 #### 3. Code to replicate simulation study 
-* XX GenerateData.do - a stata program to generate individual level time-to-event data through illness death model
-* XX scenario_table.txt 
-* XX simulation_analysis.R
+* GenerateData.do - a stata program to generate individual level time-to-event data through illness death model
+* scenario_table.txt 
+* [simulation_analysis.R]( XX getMedMeas_Cox.R - get mediation measures accoridng to binary covariate for transition to state 1 (surrogate))
 
