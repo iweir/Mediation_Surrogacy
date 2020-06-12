@@ -14,50 +14,50 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
     #----- ARM = 0 -----#
     
     # set arm variables for arm=0
-    tempdat$Arm.1 	<- tempdat$arm0.1
-    tempdat$Arm.2 	<- tempdat$arm0.2
-    tempdat$Arm.3	  <- tempdat$arm0.3
+    tempdat$Arm.1    <- tempdat$arm0.1
+    tempdat$Arm.2    <- tempdat$arm0.2
+    tempdat$Arm.3    <- tempdat$arm0.3
     if(any(names(tempdat) =="Arm.4")){ 
-      tempdat$Arm.4 <- tempdat$arm0.4
+      tempdat$Arm.4  <- tempdat$arm0.4
     }
     
     # Predicted cumulative hazards using msfit
-    msfit.temp0 	  <- msfit(model, tempdat, trans = transition.mat)
+    msfit.temp0     <- msfit(model, tempdat, trans = transition.mat)
     
     # Predicted transition probabilities for counterfactual arm=0:
-    pt.temp 		    <- probtrans(msfit.temp0, 0, variance=FALSE)[[1]][,c("time", "pstate3")]
+    pt.temp         <- probtrans(msfit.temp0, 0, variance=FALSE)[[1]][,c("time", "pstate3")]
     
     # risk at time points for counterfactual arm = 0
-    risk_arm0 		  <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
-    temp_risk_arm0 	<- do.call(cbind,risk_arm0)
+    risk_arm0       <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
+    temp_risk_arm0  <- do.call(cbind,risk_arm0)
     
     #----- ARM = 1 -----#
     
     # set arm variables for arm=1
-    tempdat$Arm.1	  <- tempdat$arm1.1
-    tempdat$Arm.2 	<- tempdat$arm1.2
-    tempdat$Arm.3 	<- tempdat$arm1.3
+    tempdat$Arm.1   <- tempdat$arm1.1
+    tempdat$Arm.2   <- tempdat$arm1.2
+    tempdat$Arm.3   <- tempdat$arm1.3
     if(any(names(tempdat) =="Arm.4")){ 
-      tempdat$Arm.4   <- tempdat$arm1.4
+      tempdat$Arm.4 <- tempdat$arm1.4
     }
     
     # Predicted cumulative hazards using msfit
-    msfit.temp1 	  <- msfit(model, tempdat, trans = transition.mat)
+    msfit.temp1     <- msfit(model, tempdat, trans = transition.mat)
     
     # Predicted transition probabilities for counterfactual arm=1:
-    pt.temp		      <- probtrans(msfit.temp1, 0, variance=FALSE)[[1]][,c("time", "pstate3")]
+    pt.temp         <- probtrans(msfit.temp1, 0, variance=FALSE)[[1]][,c("time", "pstate3")]
     
     
     # risk at time points for counterfactual arm = 1
-    risk_arm1 		    <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
-    temp_risk_arm1 	  <- do.call(cbind,risk_arm1)
+    risk_arm1       <- lapply(tau,function(x){pt.temp[pt.temp$time == max(pt.temp$time[pt.temp$time <= x]),]$pstate3})
+    temp_risk_arm1  <- do.call(cbind,risk_arm1)
     
-    risk_byID_0[i,1] 	<- tempdat$id[1]
-    risk_byID_0[i,2] 	<- tempdat$Arm[1]
+    risk_byID_0[i,1]<- tempdat$id[1]
+    risk_byID_0[i,2]<- tempdat$Arm[1]
     risk_byID_0[i,3:ncol(risk_byID_0)] <- temp_risk_arm0
 
-    risk_byID_1[i,1] 	<- tempdat$id[1]
-    risk_byID_1[i,2] 	<- tempdat$Arm[1]
+    risk_byID_1[i,1]<- tempdat$id[1]
+    risk_byID_1[i,2]<- tempdat$Arm[1]
     risk_byID_1[i,3:ncol(risk_byID_1)] <- temp_risk_arm1
     
     }
