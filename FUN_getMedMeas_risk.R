@@ -106,11 +106,11 @@ index <- 0
   
   for(t in tau){
       index       <- index+1	  
-      B 		      <- 1000
+      B           <- 1000
       b_direct 	  <- as.numeric()
-      b_indirect 	<- as.numeric()
+      b_indirect  <- as.numeric()
       b_total 	  <- as.numeric()
-      b_pm 	    	<- as.numeric()
+      b_pm        <- as.numeric()
       
     for(b in 1:B){
 
@@ -136,24 +136,24 @@ index <- 0
       tot	<- d+i
     	p		<- i/tot
   
-  	  b_direct	  <- c(b_direct, d)
-  	  b_indirect	<- c(b_indirect, i)
-  	  b_total   	<- c(b_total, tot)
-  	  b_pm		    <- c(b_pm, p)
+  	  b_direct     <- c(b_direct, d)
+  	  b_indirect   <- c(b_indirect, i)
+  	  b_total      <- c(b_total, tot)
+  	  b_pm         <- c(b_pm, p)
   
     }
   	  
-  	  direct_low		<- quantile(b_direct, c(0.025, 0.975))[[1]]
-  	  direct_up		  <- quantile(b_direct, c(0.025, 0.975))[[2]]
+  	  direct_low   <- quantile(b_direct, c(0.025, 0.975))[[1]]
+  	  direct_up    <- quantile(b_direct, c(0.025, 0.975))[[2]]
   	  
-  	  indirect_low	<- quantile(b_indirect, c(0.025, 0.975))[[1]]
-  	  indirect_up		<- quantile(b_indirect, c(0.025, 0.975))[[2]]
+  	  indirect_low <- quantile(b_indirect, c(0.025, 0.975))[[1]]
+  	  indirect_up  <- quantile(b_indirect, c(0.025, 0.975))[[2]]
   	  
-  	  total_low	  	<- quantile(b_total, c(0.025, 0.975))[[1]]
-  	  total_up		  <- quantile(b_total, c(0.025, 0.975))[[2]]
+  	  total_low    <- quantile(b_total, c(0.025, 0.975))[[1]]
+  	  total_up     <- quantile(b_total, c(0.025, 0.975))[[2]]
   	  
-  	  pm_low	    	<- quantile(b_pm, c(0.025, 0.975))[[1]]
-  	  pm_up			    <- quantile(b_pm, c(0.025, 0.975))[[2]]
+  	  pm_low       <- quantile(b_pm, c(0.025, 0.975))[[1]]
+  	  pm_up        <- quantile(b_pm, c(0.025, 0.975))[[2]]
   	  
   	  CIresults$time[index]          <- t
   	  CIresults$direct_low[index]    <- direct_low
