@@ -7,9 +7,9 @@ getMedMeas_risk <- function(longdata, tau, model, transition.mat, CI=FALSE){
   
   for(id in unique(longdata$id)){ 
     
-    i 		         	<- i+1
-    tempdat 		    <- longdata[which(longdata$id==id),]
-    tempdat$strata	<- tempdat$trans
+    i               <- i+1
+    tempdat         <- longdata[which(longdata$id==id),]
+    tempdat$strata  <- tempdat$trans
     
     #----- ARM = 0 -----#
     
