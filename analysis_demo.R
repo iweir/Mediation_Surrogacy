@@ -1,5 +1,5 @@
 # step 1 - prepare work space
-  path <- "C:\\Users\\iweir\\Dropbox (Harvard University)\\SPCG-4\\"
+  path <- "C:\\your\\path\\here\\"
   
   library(mstate)
   library(survival)
