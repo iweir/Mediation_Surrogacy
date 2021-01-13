@@ -12,7 +12,7 @@ For reproducbility and implementation, I share the code for all analyses present
 * [FUN_getMedMeas_risk.R](FUN_getMedMeas_risk.R) - to get mediation measures for multistate models according to difference in cumulative risks
 * [FUN_getMedMeas_rmtl.R](FUN_getMedMeas_rmtl.R) - to get mediation measures for multistate models according to difference in rmtl
 * [FUN_AUCiw.R](FUN_AUCiw.R) - to compute the area under the curve (rmtl)
-* [FUN_getMedMeas_cox.R](FUN_getMedMeas_cox.R) - to get mediation measures from Cox model (used in simulation study)
+<!--- * [FUN_getMedMeas_cox.R](FUN_getMedMeas_cox.R) - to get mediation measures from Cox model (used in simulation study) -->
 
 #### 2. Simulated data and R code implementing method
 * [demodata.txt](demodata.txt) - a simulated dataset for use demonstrating methods 
